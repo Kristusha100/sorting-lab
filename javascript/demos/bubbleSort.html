@@ -2,16 +2,39 @@
 <html>
 <head>
     <title>Bubble Sort Demo</title>
+    <style>
+        #arrayToSort {
+            cursor: pointer; 
+        }
+    </style>
     <script src="../bubbleSort.js"></script>
     <script>
         const arr = [9, 234, 12, 333, 21, 8]
-        console.log('initial state', arr)
-        bubbleSort(arr, arr.length)
-        console.log('state after sorting', arr)
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const $arrDiv = document.getElementById('arrayToSort')
+            console.log('writing initial array state to DOM')
+            $arrDiv.innerText = arr
+            $arrDiv.addEventListener('click', function () {
+                console.log('clicked, sorting')
+                bubbleSort(arr, arr.length)
+                console.log('sorted, rewriting')
+                $arrDiv.innerText = arr
+            })
+        })
+        
+
+        // console.log('initial state', arr)
+        // bubbleSort(arr, arr.length)
+        // console.log('state after sorting', arr)
+
+
     </script>
 </head>
 <body>
     <a href="./index.html">back to the index</a>
     <h1>Bubble Sort Demonstration</h1>
+    <p>click on the array below to sort it</p>
+    <div id="arrayToSort"></div>
 </body>
 </html>
