@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Merge Sort Demo</title>
@@ -6,10 +6,12 @@
     <script>
         const arr = [9, 234, 12, 333, 21, 8]
         console.log('initial state', arr)
-        mergeSort(arr, l, r)
-        console.log('state after sorting', arr)
+        const sorted = mergeSort(arr, 0, arr.length - 1)
+        console.log('state after sorting', sorted)
     </script>
 </head>
 <body>
+    <a href="./index.html">back to the index</a>
+    <h1>Merge Sort Demonstration</h1>
 </body>
 </html>
